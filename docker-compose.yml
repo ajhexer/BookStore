@@ -9,7 +9,7 @@ services:
     volumes:
       - .:/app
     command: >
-      sh -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+      sh -c "python manage.py migrate --settings=config.settingDeploy && python manage.py runserver 0.0.0.0:8000 --settings=config.settingDeploy"
     environment:
       - DB_HOST=db
       - DB_NAME=mydb-dev
